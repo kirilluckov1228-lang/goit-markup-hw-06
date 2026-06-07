@@ -1,4 +1,3 @@
-@import './normalize.css';
 @import './common.css';
 @import './header.css';
 @import './hero.css';
@@ -7,3 +6,4 @@
 @import './portfolio.css';
 @import './footer.css';
 @import './modal.css';
+@import './mobile-menu.css';
