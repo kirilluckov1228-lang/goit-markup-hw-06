@@ -160,7 +160,7 @@
     flex-wrap: wrap;
     align-items: flex-start;
     padding: 0 108px;
-    column-gap: 24px;
+
   }
 
   .footer .logo {
@@ -222,5 +222,6 @@
 
   .footer-subscribe-block {
     margin-left: 83px;
+    column-gap: 0;
   }
 }
