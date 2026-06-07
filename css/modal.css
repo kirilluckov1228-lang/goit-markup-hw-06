@@ -1,0 +1,257 @@
+.order-modal-overlay {
+  background-color: rgb(46, 47, 66, 0.4);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms ease-in-out;
+}
+
+.order-modal-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.order-modal-content {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 4px;
+  padding-block: 72px 24px;
+  padding-inline: 16px;
+  max-width: 288px;
+  overflow-y: auto;
+
+  box-shadow:
+    0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 2px 1px 0 rgba(0, 0, 0, 0.2);
+  background: var(--dairy);
+}
+
+.order-modal-title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--navy-blue);
+  align-self: center;
+}
+
+.order-modal-form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.order-modal-fieldset {
+  border: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.order-modal-textfields {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.order-modal-field {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.order-modal-label {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.17;
+  color: var(--light-slate);
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-wrapper-icon {
+  position: absolute;
+  top: calc(50% - 12px);
+  left: 16px;
+  fill: var(--navy-blue-modal);
+  transition: fill 250ms ease-in-out;
+}
+
+.order-modal-field input,
+.order-modal-field textarea {
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  padding-block: 8px;
+  padding-inline: 38px;
+  width: 100%;
+  outline: none;
+  transition: border-color 250ms ease-in-out;
+}
+
+.order-modal-field textarea {
+  height: 120px;
+  width: 100%;
+  padding-inline: 16px;
+  resize: none;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+}
+
+.order-modal-field textarea:hover,
+.order-modal-field textarea:focus {
+  border-color: var(--iris);
+}
+
+.order-modal-field textarea::placeholder {
+  color: rgba(46, 47, 66, 0.4);
+}
+
+.order-modal-field input:hover,
+.order-modal-field input:focus,
+.order-modal-field input:focus-within {
+  border-color: var(--iris);
+}
+
+.order-modal-field:hover .input-wrapper__icon,
+.order-modal-field:focus .input-wrapper__icon,
+.order-modal-field:focus-within .input-wrapper__icon {
+  fill: var(--iris);
+}
+
+.order-modal-agreement {
+  position: relative;
+  width: 100%;
+}
+
+#agreement {
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+}
+
+.order-modal-agreement-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.order-modal-agreement-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.agreement-chckbox-wrapper {
+  display: flex;
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  align-self: center;
+  width: 16px;
+  height: 16px;
+  justify-content: center;
+  align-items: center;
+
+  transition:
+    border-color 250ms ease-in-out,
+    background-color 250ms ease-in-out;
+}
+
+#agreement:checked + .order-modal-agreement-label .agreement-chckbo-wrapper {
+  border-color: var(--ocean);
+  background-color: var(--ocean);
+}
+
+.agreement-checkbox-icon {
+  opacity: 0;
+  fill: var(--cloud);
+  width: 10px;
+  height: 8px;
+}
+
+#agreement:checked + .order-modal-agreement-label .agreement-checkbox-icon {
+  opacity: 1;
+}
+
+.order-modal-agreement-text {
+  letter-spacing: 0.04em;
+  color: var(--light-slate);
+  font-size: 12px;
+  line-height: 1.17;
+}
+
+.order-modal-policy-link {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: var(--iris);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.17;
+}
+
+.order-modal-submit-button {
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  border: none;
+  border-radius: 4px;
+  padding-block: 16px;
+  padding-inline: 32px;
+  width: 169px;
+  height: 56px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  background: var(--iris);
+  color: var(--white);
+  transition: background 250ms ease-in-out;
+}
+
+.order-modal-submit-button:hover,
+.order-modal-submit-button:focus {
+  background: var(--ocean);
+}
+
+@media (min-width: 768px) {
+  .order-modal-content {
+    max-width: 408px;
+    padding-inline: 24px;
+  }
+}
