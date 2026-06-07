@@ -7,6 +7,9 @@
   align-items: center;
 }
 
+.team-item-content{
+  margin-top: 72px;
+}
 
 .team-title {
   margin-bottom: 72px;
@@ -54,7 +57,7 @@
   gap: 8px;
 }
 
-/* h3 */
+
 .team-item-name {
   color: var(--navy-blue);
   font-weight: 500;
