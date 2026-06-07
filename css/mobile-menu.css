@@ -62,7 +62,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  
+  gap: 48px;
 }
 
 .mobile-menu-contacts-list {
@@ -70,7 +70,7 @@
   align-items: flex-start;
   justify-content: space-around;
   flex-direction: column;
-  column-gap: 40px;
+
   row-gap: 24px;
 }
 
